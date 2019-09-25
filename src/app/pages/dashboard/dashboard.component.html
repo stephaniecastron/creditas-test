@@ -1,55 +1,51 @@
 <section class="container">
-    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between center">
-        <div fxFlex.gt-sm="26" fxFlex.gt-xs="49" fxFlex="100">
-            <mat-card color="primary">
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                    alt="Photo of a Shiba Inu">
-                <mat-card-content>
-                    <p>
-                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                        bred for hunting.
-                    </p>
-                </mat-card-content>
-            </mat-card>
+    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
+        <div fxFlex.gt-sm="18" fxFlex.gt-xs="49" fxFlex="100">
+            <!-- <mat-card> -->
+            <div class="profile-container" matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled"
+                [matRippleUnbounded]="unbounded" [matRippleRadius]="radius" [matRippleColor]="color">
+                <img *ngIf="user?.picture" class="profile-image" [src]="userPicture" alt="Photo of user">
+            </div>
+            <mat-list>
+                <mat-list-item>
+                    <label class="profile-name" mat-line><strong>{{user?.name}}</strong></label>
+                    <p mat-line>{{user?.login}}</p>
+                </mat-list-item>
+                <mat-list-item>
+                    <i matListIcon class="fi flaticon-facebook-placeholder-for-locate-places-on-maps profile-icon"></i>
+                    <h4 mat-line class="profile-info">{{user?.location}}</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <i matListIcon class="fi flaticon-message-closed-envelope profile-icon"></i>
+                    <h4 mat-line class="profile-info">{{user?.email}}</h4>
+                </mat-list-item>
+            </mat-list>
         </div>
-        <div fxFlex.gt-sm="72" fxFlex.gt-xs="49" fxFlex="100">
-            <mat-card color="primary">
-                <mat-tab-group>
-                    <mat-tab label="Repositories">
-                        <mat-list>
-                            <mat-list-item>
-                                <label mat-line for="">project-01</label>
-                                <span mat-line><small>Very Cool Project I was working for a while</small></span>
-                                <mat-chip-list mat-line>
-                                    <mat-chip>Papadum</mat-chip>
-                                    <mat-chip>Naan</mat-chip>
-                                    <mat-chip>Dal</mat-chip>
-                                </mat-chip-list>
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                            <mat-list-item>
-                                <label mat-line for="">project-01</label>
-                                <span mat-line><small>Very Cool Project I was working for a while</small></span>
-                                <mat-chip-list mat-line>
-                                    <mat-chip>Papadum</mat-chip>
-                                    <mat-chip>Naan</mat-chip>
-                                    <mat-chip>Dal</mat-chip>
-                                </mat-chip-list>
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                            <mat-list-item>
-                                <label mat-line for="">project-01</label>
-                                <span mat-line><small>Very Cool Project I was working for a while</small></span>
-                                <mat-chip-list mat-line>
-                                    <mat-chip>Papadum</mat-chip>
-                                    <mat-chip>Naan</mat-chip>
-                                    <mat-chip>Dal</mat-chip>
-                                </mat-chip-list>
-                            </mat-list-item>
-                        </mat-list>
-                    </mat-tab>
-                </mat-tab-group>
+        <div fxFlex.gt-sm="80" fxFlex.gt-xs="49" fxFlex="100">
+            <mat-card>
+                <mat-card-content>
+                    <mat-tab-group>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <label>Repositories</label>
+                                <span>({{projects?.length}})</span>
+                            </ng-template>
+                            <mat-list>
+                                <div *ngFor="let project of projects">
+                                    <mat-list-item class="repositories">
+                                        <label mat-line><strong>{{project.name}}</strong></label>
+                                        <span mat-line><small>{{project.description}}</small></span>
+                                        <mat-chip-list mat-line>
+                                            <mat-chip *ngFor="let language of project.programmingLanguages">
+                                                {{language.name}}</mat-chip>
+                                        </mat-chip-list>
+                                    </mat-list-item>
+                                    <mat-divider></mat-divider>
+                                </div>
+                            </mat-list>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card-content>
             </mat-card>
         </div>
     </div>

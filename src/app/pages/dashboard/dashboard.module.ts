@@ -8,7 +8,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
-
+import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -21,7 +22,9 @@ import { MatChipsModule } from '@angular/material/chips';
     MatTabsModule,
     MatListModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRippleModule,
+    MatIconModule
   ]
 })
 export class DashboardModule { }

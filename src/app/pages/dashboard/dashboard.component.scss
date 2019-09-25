@@ -2,3 +2,57 @@
     background-color: #cddae9;
     color: #618BBA;
 }
+
+.profile-container {
+    text-align: center;
+    background-color: #C5C5C5;
+    width: 100%;
+    height: 300px;
+    line-height: 300px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:host::ng-deep.mat-tab-label-content {
+    label {
+        font-weight: bold;
+        padding-right: 5px;
+    }
+}
+
+.repositories {
+    padding: 30px 0 !important;
+
+    label,
+    span {
+        padding-bottom: 20px;
+        color: #B6B6B6;
+        font-size: 16px;
+    }
+}
+
+.profile-image {
+    height: 100%;
+}
+
+.profile-name {
+    font-size: 22px !important;
+    padding-bottom: 0.3em !important;
+}
+
+.profile-info {
+    color: #BDBDBD;
+    font-weight: bold !important;
+}
+
+.profile-icon {
+    color: #262686;
+}
+
+::ng-deep.mat-tab-body.mat-tab-body-active{
+    overflow-y: hidden !important;
+}
