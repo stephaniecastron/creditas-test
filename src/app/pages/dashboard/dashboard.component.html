@@ -1,9 +1,7 @@
 <section class="container">
     <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-between">
         <div fxFlex.gt-sm="18" fxFlex.gt-xs="49" fxFlex="100">
-            <!-- <mat-card> -->
-            <div class="profile-container" matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled"
-                [matRippleUnbounded]="unbounded" [matRippleRadius]="radius" [matRippleColor]="color">
+            <div class="profile-container" matRipple>
                 <img *ngIf="user?.picture" class="profile-image" [src]="userPicture" alt="Photo of user">
             </div>
             <mat-list>
