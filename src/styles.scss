@@ -14,4 +14,14 @@ body {
     background-size: contain;
 }
 
-/* You can add global styles to this file, and also import other style files */
+.app-container {
+    height: 100vh;
+    right: 22px;
+    z-index: 10;
+}
+
+.container {
+    padding-right: 2.5em;
+    padding-left: 2.5em;
+    margin: 3em auto;
+}
