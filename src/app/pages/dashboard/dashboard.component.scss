@@ -1,11 +1,13 @@
+@import "~src/assets/styles/variables";
+
 .mat-chip.mat-standard-chip {
-    background-color: #cddae9;
-    color: #618BBA;
+    background-color: $chip-color;
+    color: $chip-font-color;
 }
 
 .profile-container {
     text-align: center;
-    background-color: #C5C5C5;
+    background-color: $profile-color;
     width: 100%;
     height: 300px;
     line-height: 300px;
@@ -30,7 +32,7 @@
     label,
     span {
         padding-bottom: 20px;
-        color: #B6B6B6;
+        color: $profile-color;
         font-size: 16px;
     }
 }
@@ -45,14 +47,14 @@
 }
 
 .profile-info {
-    color: #BDBDBD;
+    color: $info-color;
     font-weight: bold !important;
 }
 
 .profile-icon {
-    color: #262686;
+    color: $icon-color;
 }
 
-::ng-deep.mat-tab-body.mat-tab-body-active{
+::ng-deep.mat-tab-body.mat-tab-body-active {
     overflow-y: hidden !important;
 }
