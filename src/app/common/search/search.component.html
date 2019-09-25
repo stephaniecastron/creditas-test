@@ -1,0 +1,12 @@
+<input class="search" aria-label="search" placeholder="Search" type="search" [formControl]="searchControl" matInput
+    [matAutocomplete]="auto">
+<mat-autocomplete #auto="matAutocomplete" color="primary">
+    <mat-option *ngIf="loading">
+        <div class="loading-indicator">
+            <mat-spinner [diameter]="25"></mat-spinner>
+        </div>
+    </mat-option>
+    <mat-option *ngFor="let item of githubSearch$ | async; let index=index" [value]="item.name">
+        {{ item.name | titlecase}}
+    </mat-option>
+</mat-autocomplete>

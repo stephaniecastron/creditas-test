@@ -1,1 +1,17 @@
+@import "assets/styles/variables";
+
+body {
+    background-color: $bg-color-content;
+    height: 100%;
+    margin: 0;
+}
+
+.logo-app {
+    height: 40px;
+    margin: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 /* You can add global styles to this file, and also import other style files */
