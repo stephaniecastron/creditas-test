@@ -1,5 +1,6 @@
 export interface Item {
     name: string;
+    stargazers_count: number;
 }
 
 export interface Owner {

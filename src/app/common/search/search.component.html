@@ -7,6 +7,6 @@
         </div>
     </mat-option>
     <mat-option *ngFor="let item of githubSearch$ | async; let index=index" [value]="item.name">
-        {{ item.name | titlecase}}
+        Project {{ item?.name | titlecase}} Stars: {{item?.stargazers_count}}
     </mat-option>
 </mat-autocomplete>

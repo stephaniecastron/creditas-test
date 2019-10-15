@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.githubSearch$ = this.searchControl
       .valueChanges.pipe(
-        debounceTime(200),
+        debounceTime(500),
         distinctUntilChanged(),
         switchMap(value => {
           if (value !== '') {
@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit {
         finalize(() => {
           this.loading = false;
         }),
-        map((response) => response.items),
+        map((response) => response),
         catchError((err) => of(null))
       );
   }
